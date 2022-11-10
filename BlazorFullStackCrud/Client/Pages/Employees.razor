@@ -1,0 +1,37 @@
+﻿@page "/employees"
+
+@inject IEmployeesService EmployeesService
+
+<PageTitle>Employees</PageTitle>
+
+<h3>Employees</h3>
+
+<table>
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email Address</th>
+            <th>Phone Number</th>
+            <th>Hire Date</th>
+            <th>Salary</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var worker in EmployeesService.Workers)
+        {
+            <tr>
+                <td>@worker.FirstName</td>
+                <td>@worker.LastName</td>
+                <td>@worker.EmailAddress</td>
+                <td>@worker.PhoneNumber</td>
+                <td>@worker.HireDate</td>
+                <td>@worker.Salary</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    
+}
